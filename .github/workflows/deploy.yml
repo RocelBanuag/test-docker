@@ -65,7 +65,7 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker build . -f Dockerfile_Nginx -t nginx
-          docker tag nginx:latest $ECR_REGISTRY/laravel-nginx:$IMAGE_TAG
+          docker tag nginx:latest $ECR_REGISTRY/nginx:$IMAGE_TAG
           docker push $ECR_REGISTRY/nginx:$IMAGE_TAG
 
       - name: Download task definition
