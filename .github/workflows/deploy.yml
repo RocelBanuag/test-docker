@@ -54,8 +54,8 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker build -t app .
-          docker tag app:latest $ECR_REGISTRY/app:latest
-          docker push $ECR_REGISTRY/app:latest
+          docker tag app:latest $ECR_REGISTRY/app:$IMAGE_TAG
+          docker push $ECR_REGISTRY/app:$IMAGE_TAG
 
       - name: Build nginx
         id: build-nginx-image
